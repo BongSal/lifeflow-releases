@@ -352,6 +352,13 @@
       .checks span {
         color: var(--muted);
       }
+      .checks code {
+        font-size: 0.88em;
+        background: var(--bg);
+        border: 1px solid var(--border);
+        border-radius: 0.35rem;
+        padding: 0.05rem 0.3rem;
+      }
       .alt {
         background: var(--card);
         border-block: 1px solid var(--border);
@@ -447,8 +454,9 @@
           <a class="brand" href="./"><img src="logo.svg" alt="" />Lifeflow</a>
           <div class="links">
             <a href="#features" class="hide-sm">Features</a>
-            <a href="#privacy" class="hide-sm">Privacy</a>
-            <a href="#download">Download</a>
+            <a href="#google-data" class="hide-sm">Google data</a>
+            <a href="#download" class="hide-sm">Download</a>
+            <a href="https://bongsal.github.io/lifeflow-releases/privacy/">Privacy Policy</a>
           </div>
         </nav>
 
@@ -458,7 +466,8 @@
             <h1>Plan your day.<br /><span class="grad">Keep your flow.</span></h1>
             <p class="lead">
               Lifeflow brings your tasks, focus timer, calendar, reminders, notes, habits and
-              expenses together in one calm app. Your data stays on your device.
+              expenses together in one calm app. Your data stays on your device, with optional
+              backup and sync through your own Google Drive.
             </p>
             <div class="cta">
               <a class="btn btn-primary" id="hero-download" href="#download">Download Lifeflow</a>
@@ -597,7 +606,7 @@
               Lifeflow has no accounts and no Lifeflow server. Everything you write stays on your
               phone or computer unless you choose to back it up.
             </p>
-            <a class="btn btn-ghost" style="border-color: var(--border); color: var(--fg)" href="privacy/">Read the privacy policy</a>
+            <a class="btn btn-ghost" style="border-color: var(--border); color: var(--fg)" href="https://bongsal.github.io/lifeflow-releases/privacy/">Read the privacy policy</a>
           </div>
           <ul class="checks">
             <li>
@@ -628,6 +637,68 @@
               </div>
             </li>
           </ul>
+        </div>
+      </section>
+
+      <section id="google-data">
+        <div class="wrap split">
+          <div>
+            <h2>Why Lifeflow asks for access to your Google account</h2>
+            <p class="section-lead">
+              Signing in with Google is optional. Lifeflow asks for it only when you turn on
+              <strong>Cloud sync</strong> in Settings, so the app can back up your Lifeflow data
+              and keep your phone and computer in sync.
+            </p>
+            <a class="btn btn-ghost" style="border-color: var(--border); color: var(--fg)" href="https://bongsal.github.io/lifeflow-releases/privacy/">Privacy Policy</a>
+          </div>
+          <ul class="checks">
+            <li>
+              <div>
+                <strong>One permission: Lifeflow's own app folder in Google Drive</strong>
+                <span>
+                  The app requests only the <code>drive.appdata</code> scope (“See, create, and
+                  delete its own configuration data in your Google Drive”). It uses this to save,
+                  read and delete its own backup files in a hidden folder that only Lifeflow can
+                  use.
+                </span>
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Nothing else in your Google account</strong>
+                <span>
+                  Lifeflow can't see, open or change your other Drive files, and it doesn't read
+                  your email, contacts or profile.
+                </span>
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Straight from your device to your Drive</strong>
+                <span>
+                  Backups never pass through a Lifeflow server, and the developer can't access
+                  them. Your Google data isn't sold, used for ads or shared with anyone.
+                </span>
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>You stay in control</strong>
+                <span>
+                  You can disconnect in Settings at any time, remove access at
+                  <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>,
+                  or delete the backups from Drive under Settings → Manage apps.
+                </span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="wrap">
+          <p class="note">
+            Lifeflow's use and transfer of information received from Google APIs follows the
+            <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API
+            Services User Data Policy</a>, including the Limited Use requirements.
+          </p>
         </div>
       </section>
 
@@ -685,8 +756,8 @@
       <div class="wrap">
         <span>© <span id="year">2026</span> Lifeflow</span>
         <nav>
-          <a href="privacy/">Privacy policy</a>
-          <a href="terms-of-use/">Terms of use</a>
+          <a href="https://bongsal.github.io/lifeflow-releases/privacy/">Privacy Policy</a>
+          <a href="https://bongsal.github.io/lifeflow-releases/terms-of-use/">Terms of Use</a>
           <a href="https://github.com/BongSal/lifeflow-releases/releases">Releases</a>
           <a href="https://github.com/BongSal/lifeflow-releases/issues">Contact</a>
         </nav>
