@@ -1,0 +1,757 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lifeflow</title>
+    <meta
+      name="description"
+      content="Lifeflow is a calm, private planner for your day: tasks, focus timer, calendar, reminders, notes, boards, habits and expenses. For Android, Windows, macOS and Linux."
+    />
+    <meta property="og:title" content="Lifeflow" />
+    <meta
+      property="og:description"
+      content="Plan, focus, take breaks and review your day. Private by design, free to download."
+    />
+    <meta property="og:image" content="https://bongsal.github.io/lifeflow-releases/logo.svg" />
+    <link rel="icon" href="logo.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="#1A1324" />
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #f7f6fb;
+        --fg: #1f1830;
+        --muted: #5f566f;
+        --card: #ffffff;
+        --border: #e6e1ef;
+        --primary: #b8336a;
+        --primary-fg: #ffffff;
+        --break: #2f7d4c;
+        --hero: #1a1324;
+        --hero-fg: #f1ecf8;
+        --hero-muted: #b9aecb;
+        --pink: #f06c9b;
+        --lilac: #b89cf0;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #1a1324;
+          --fg: #f1ecf8;
+          --muted: #b9aecb;
+          --card: #231a30;
+          --border: #34284a;
+          --primary: #f06c9b;
+          --primary-fg: #1a1324;
+          --break: #6cc48a;
+          --hero: #120d1a;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--fg);
+        font:
+          16px/1.6 system-ui,
+          -apple-system,
+          'Segoe UI',
+          Roboto,
+          sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      a {
+        color: inherit;
+      }
+      .wrap {
+        max-width: 68rem;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+
+      /* Hero */
+      .hero {
+        background:
+          radial-gradient(60rem 30rem at 85% -10%, #f06c9b33, transparent 60%),
+          radial-gradient(50rem 30rem at -10% 110%, #b89cf033, transparent 60%), var(--hero);
+        color: var(--hero-fg);
+        overflow: hidden;
+      }
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.25rem 0;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-weight: 700;
+        font-size: 1.15rem;
+        text-decoration: none;
+      }
+      .brand img {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 0.6rem;
+      }
+      nav .links {
+        display: flex;
+        gap: 1.25rem;
+        font-size: 0.95rem;
+      }
+      nav .links a {
+        color: var(--hero-muted);
+        text-decoration: none;
+      }
+      nav .links a:hover {
+        color: var(--hero-fg);
+      }
+      .hero-grid {
+        display: grid;
+        gap: 3rem;
+        align-items: center;
+        padding: 3rem 0 5rem;
+      }
+      @media (min-width: 52rem) {
+        .hero-grid {
+          grid-template-columns: 1.15fr 1fr;
+          padding: 4rem 0 6rem;
+        }
+      }
+      .eyebrow {
+        display: inline-block;
+        font-size: 0.85rem;
+        color: var(--hero-muted);
+        border: 1px solid #ffffff22;
+        border-radius: 999px;
+        padding: 0.25rem 0.75rem;
+        margin-bottom: 1.25rem;
+      }
+      h1 {
+        font-size: clamp(2.4rem, 6vw, 3.75rem);
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+        margin: 0 0 1.25rem;
+      }
+      h1 .grad {
+        background: linear-gradient(120deg, var(--pink), var(--lilac));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .lead {
+        font-size: 1.15rem;
+        color: var(--hero-muted);
+        max-width: 34rem;
+        margin: 0 0 2rem;
+      }
+      .cta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        align-items: center;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        min-height: 2.9rem;
+        padding: 0 1.25rem;
+        border-radius: 0.85rem;
+        font-weight: 600;
+        text-decoration: none;
+        border: 1px solid transparent;
+        transition: transform 0.15s ease;
+      }
+      .btn:hover {
+        transform: translateY(-1px);
+      }
+      .btn-primary {
+        background: var(--pink);
+        color: #1a1324;
+      }
+      .btn-ghost {
+        border-color: #ffffff2e;
+        color: var(--hero-fg);
+      }
+      .version {
+        font-size: 0.85rem;
+        color: var(--hero-muted);
+        margin-top: 1rem;
+      }
+
+      /* Timer illustration */
+      .timer {
+        position: relative;
+        width: min(22rem, 80vw);
+        aspect-ratio: 1;
+        margin: 0 auto;
+      }
+      .timer svg {
+        width: 100%;
+        height: 100%;
+      }
+      .timer .clock {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-content: center;
+        text-align: center;
+      }
+      .timer .time {
+        font-size: clamp(2.5rem, 9vw, 3.5rem);
+        font-weight: 700;
+        font-variant-numeric: tabular-nums;
+        letter-spacing: -0.02em;
+      }
+      .timer .label {
+        color: var(--hero-muted);
+        font-size: 0.95rem;
+      }
+      @media (prefers-reduced-motion: no-preference) {
+        .timer .arc {
+          animation: sweep 6s ease-in-out infinite alternate;
+        }
+      }
+      @keyframes sweep {
+        from {
+          stroke-dashoffset: 340;
+        }
+        to {
+          stroke-dashoffset: 130;
+        }
+      }
+
+      /* Sections */
+      section {
+        padding: 5rem 0;
+      }
+      h2 {
+        font-size: clamp(1.75rem, 4vw, 2.4rem);
+        line-height: 1.15;
+        letter-spacing: -0.015em;
+        margin: 0 0 0.75rem;
+      }
+      .section-lead {
+        color: var(--muted);
+        font-size: 1.1rem;
+        max-width: 38rem;
+        margin: 0 0 2.5rem;
+      }
+
+      .flow {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin: 0 0 3rem;
+        padding: 0;
+        list-style: none;
+      }
+      .flow li {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        padding: 0.4rem 0.95rem;
+        font-weight: 600;
+        font-size: 0.95rem;
+      }
+      .flow li + li::before {
+        content: '→';
+        color: var(--muted);
+        margin-right: 0.5rem;
+        font-weight: 400;
+      }
+      .flow li + li {
+        background: none;
+        border-color: transparent;
+        padding-left: 0;
+      }
+      .flow li + li span {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        padding: 0.4rem 0.95rem;
+      }
+
+      .grid {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 1.25rem;
+        padding: 1.4rem;
+      }
+      .card .icon {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 0.8rem;
+        display: grid;
+        place-items: center;
+        margin-bottom: 0.9rem;
+        background: color-mix(in oklab, var(--primary) 14%, transparent);
+        color: var(--primary);
+      }
+      .card .icon svg {
+        width: 1.3rem;
+        height: 1.3rem;
+      }
+      .card h3 {
+        margin: 0 0 0.35rem;
+        font-size: 1.05rem;
+      }
+      .card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.97rem;
+      }
+
+      .split {
+        display: grid;
+        gap: 2.5rem;
+      }
+      @media (min-width: 52rem) {
+        .split {
+          grid-template-columns: 1fr 1fr;
+          align-items: start;
+        }
+      }
+      .checks {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 0.9rem;
+      }
+      .checks li {
+        display: flex;
+        gap: 0.75rem;
+      }
+      .checks li::before {
+        content: '';
+        flex: none;
+        width: 1.35rem;
+        height: 1.35rem;
+        margin-top: 0.15rem;
+        border-radius: 999px;
+        background: color-mix(in oklab, var(--break) 18%, transparent)
+          url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234fa36e' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E")
+          center / 0.8rem no-repeat;
+      }
+      .checks strong {
+        display: block;
+      }
+      .checks span {
+        color: var(--muted);
+      }
+      .alt {
+        background: var(--card);
+        border-block: 1px solid var(--border);
+      }
+
+      /* Downloads */
+      .downloads {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+      }
+      .dl {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+      .dl.recommended {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 1px var(--primary);
+      }
+      .dl h3 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0;
+        font-size: 1.1rem;
+      }
+      .dl .tag {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--primary);
+      }
+      .dl .files {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: auto;
+      }
+      .dl a.file {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.75rem;
+        min-height: 2.75rem;
+        padding: 0 0.9rem;
+        border-radius: 0.75rem;
+        border: 1px solid var(--border);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.95rem;
+      }
+      .dl a.file:hover {
+        border-color: var(--primary);
+      }
+      .dl a.file small {
+        color: var(--muted);
+        font-weight: 400;
+      }
+      .note {
+        color: var(--muted);
+        font-size: 0.9rem;
+        margin-top: 1.5rem;
+      }
+
+      footer {
+        border-top: 1px solid var(--border);
+        padding: 2rem 0 3rem;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+      footer .wrap {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem 2rem;
+        justify-content: space-between;
+      }
+      footer nav {
+        padding: 0;
+        gap: 1.25rem;
+        display: flex;
+      }
+      @media (max-width: 30rem) {
+        nav .links a.hide-sm {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="wrap">
+        <nav>
+          <a class="brand" href="./"><img src="logo.svg" alt="" />Lifeflow</a>
+          <div class="links">
+            <a href="#features" class="hide-sm">Features</a>
+            <a href="#privacy" class="hide-sm">Privacy</a>
+            <a href="#download">Download</a>
+          </div>
+        </nav>
+
+        <div class="hero-grid">
+          <div>
+            <span class="eyebrow">ជីវិត · Free for Android, Windows, macOS and Linux</span>
+            <h1>Plan your day.<br /><span class="grad">Keep your flow.</span></h1>
+            <p class="lead">
+              Lifeflow brings your tasks, focus timer, calendar, reminders, notes, habits and
+              expenses together in one calm app. Your data stays on your device.
+            </p>
+            <div class="cta">
+              <a class="btn btn-primary" id="hero-download" href="#download">Download Lifeflow</a>
+              <a class="btn btn-ghost" href="#features">See what it does</a>
+            </div>
+            <p class="version" id="hero-version">&nbsp;</p>
+          </div>
+
+          <div class="timer" aria-hidden="true">
+            <svg viewBox="0 0 200 200">
+              <defs>
+                <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#F06C9B" />
+                  <stop offset="1" stop-color="#B89CF0" />
+                </linearGradient>
+              </defs>
+              <circle cx="100" cy="100" r="84" fill="none" stroke="#2E2440" stroke-width="14" />
+              <circle
+                class="arc"
+                cx="100"
+                cy="100"
+                r="84"
+                fill="none"
+                stroke="url(#ring)"
+                stroke-width="14"
+                stroke-linecap="round"
+                stroke-dasharray="528"
+                stroke-dashoffset="160"
+                transform="rotate(-90 100 100)"
+              />
+            </svg>
+            <div class="clock">
+              <div class="time">25:00</div>
+              <div class="label">Focus · session 2 of 4</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="features">
+        <div class="wrap">
+          <h2>Everything for your day, in one place</h2>
+          <p class="section-lead">
+            Lifeflow follows a simple rhythm. Plan what matters, work in focused sessions, take real
+            breaks, then look back at how the day went.
+          </p>
+          <ul class="flow">
+            <li>Plan</li>
+            <li><span>Work</span></li>
+            <li><span>Take breaks</span></li>
+            <li><span>Complete tasks</span></li>
+            <li><span>Review</span></li>
+          </ul>
+
+          <div class="grid">
+            <article class="card">
+              <div class="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9" /><path d="M12 7v5l3 2" /></svg>
+              </div>
+              <h3>Today at a glance</h3>
+              <p>One screen shows what's due, what's next, your habits and today's focus time.</p>
+            </article>
+            <article class="card">
+              <div class="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8" /><path d="M12 9v4l2 2M9 2h6" /></svg>
+              </div>
+              <h3>Focus and break timer</h3>
+              <p>
+                Focus sessions and breaks run one after another by themselves. You can set focus
+                hours that start the timer on your work days.
+              </p>
+            </article>
+            <article class="card">
+              <div class="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 11 3 3L22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+              </div>
+              <h3>Tasks</h3>
+              <p>Add tasks with categories, due dates and repeats, and tick them off as you go.</p>
+            </article>
+            <article class="card">
+              <div class="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" /><path d="M16 2v4M8 2v4M3 10h18" /></svg>
+              </div>
+              <h3>Calendar and holidays</h3>
+              <p>
+                See your events by week or month. Public holidays for your country are added
+                automatically.
+              </p>
+            </article>
+            <article class="card">
+              <div class="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" /><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" /></svg>
+              </div>
+              <h3>Reminders</h3>
+              <p>Reminders arrive on time, even when the app is closed.</p>
+            </article>
+            <article class="card">
+              <div class="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1" /><rect x="14" y="3" width="7" height="5" rx="1" /><rect x="14" y="12" width="7" height="9" rx="1" /><rect x="3" y="16" width="7" height="5" rx="1" /></svg>
+              </div>
+              <h3>Notes and boards</h3>
+              <p>Write notes in Markdown. Organise projects on Kanban boards with drag and drop.</p>
+            </article>
+            <article class="card">
+              <div class="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2s4 4 4 9a4 4 0 0 1-8 0c0-5 4-9 4-9Z" /><path d="M12 15v7" /></svg>
+              </div>
+              <h3>Habits</h3>
+              <p>Track daily, weekly or monthly habits with streaks and gentle alerts.</p>
+            </article>
+            <article class="card">
+              <div class="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2" /><circle cx="12" cy="12" r="2" /><path d="M6 12h.01M18 12h.01" /></svg>
+              </div>
+              <h3>Expenses</h3>
+              <p>Record spending in USD or riel and see totals by category.</p>
+            </article>
+            <article class="card">
+              <div class="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18" /><path d="M7 16v-5M12 16V8M17 16v-3" /></svg>
+              </div>
+              <h3>Statistics</h3>
+              <p>Look back at your focus time, finished tasks and habits for the week.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="privacy" class="alt">
+        <div class="wrap split">
+          <div>
+            <h2>Private by design</h2>
+            <p class="section-lead">
+              Lifeflow has no accounts and no Lifeflow server. Everything you write stays on your
+              phone or computer unless you choose to back it up.
+            </p>
+            <a class="btn btn-ghost" style="border-color: var(--border); color: var(--fg)" href="privacy/">Read the privacy policy</a>
+          </div>
+          <ul class="checks">
+            <li>
+              <div>
+                <strong>Stored on your device</strong>
+                <span>Your tasks, notes and the rest are kept in a database on the device.</span>
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Sync through your own Google Drive</strong>
+                <span>
+                  Backups go to a hidden folder in your Drive and keep your phone and computer in
+                  sync. Lifeflow can't see any other file in your Drive.
+                </span>
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>English and ខ្មែរ</strong>
+                <span>The whole app is available in English and in Khmer.</span>
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Updates itself</strong>
+                <span>New versions are installed from inside the app on Android and desktop.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="download">
+        <div class="wrap">
+          <h2>Download Lifeflow</h2>
+          <p class="section-lead" id="dl-lead">Free for Android, Windows, macOS and Linux.</p>
+
+          <div class="downloads">
+            <article class="card dl" data-os="android">
+              <h3>Android <span class="tag" hidden>For this device</span></h3>
+              <p class="muted" style="margin: 0; color: var(--muted)">
+                Android 7 or later. Allow “Install unknown apps” for your browser when asked.
+              </p>
+              <div class="files">
+                <a class="file" data-match="\.apk$" href="https://github.com/BongSal/lifeflow-releases/releases/latest">APK <small>Phone and tablet</small></a>
+              </div>
+            </article>
+            <article class="card dl" data-os="windows">
+              <h3>Windows <span class="tag" hidden>For this device</span></h3>
+              <p style="margin: 0; color: var(--muted)">Windows 10 or 11, 64-bit.</p>
+              <div class="files">
+                <a class="file" data-match="x64-setup\.exe$" href="https://github.com/BongSal/lifeflow-releases/releases/latest">Installer <small>.exe</small></a>
+                <a class="file" data-match="\.msi$" href="https://github.com/BongSal/lifeflow-releases/releases/latest">MSI package <small>.msi</small></a>
+              </div>
+            </article>
+            <article class="card dl" data-os="mac">
+              <h3>macOS <span class="tag" hidden>For this device</span></h3>
+              <p style="margin: 0; color: var(--muted)">Apple silicon or Intel Macs.</p>
+              <div class="files">
+                <a class="file" data-match="aarch64\.dmg$" href="https://github.com/BongSal/lifeflow-releases/releases/latest">Apple silicon <small>.dmg</small></a>
+                <a class="file" data-match="x64\.dmg$" href="https://github.com/BongSal/lifeflow-releases/releases/latest">Intel <small>.dmg</small></a>
+              </div>
+            </article>
+            <article class="card dl" data-os="linux">
+              <h3>Linux <span class="tag" hidden>For this device</span></h3>
+              <p style="margin: 0; color: var(--muted)">64-bit x86 distributions.</p>
+              <div class="files">
+                <a class="file" data-match="\.deb$" href="https://github.com/BongSal/lifeflow-releases/releases/latest">Debian, Ubuntu <small>.deb</small></a>
+                <a class="file" data-match="\.rpm$" href="https://github.com/BongSal/lifeflow-releases/releases/latest">Fedora, openSUSE <small>.rpm</small></a>
+                <a class="file" data-match="\.AppImage$" href="https://github.com/BongSal/lifeflow-releases/releases/latest">Any distribution <small>AppImage</small></a>
+              </div>
+            </article>
+          </div>
+          <p class="note">
+            The desktop apps aren't code-signed yet. The first time you open Lifeflow, Windows or
+            macOS may warn you about it. All builds are on
+            <a href="https://github.com/BongSal/lifeflow-releases/releases">GitHub Releases</a>.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <span>© <span id="year">2026</span> Lifeflow</span>
+        <nav>
+          <a href="privacy/">Privacy policy</a>
+          <a href="https://github.com/BongSal/lifeflow-releases/releases">Releases</a>
+          <a href="https://github.com/BongSal/lifeflow-releases/issues">Contact</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script>
+      ;(function () {
+        document.getElementById('year').textContent = new Date().getFullYear()
+
+        var ua = navigator.userAgent
+        var os = /Android/i.test(ua)
+          ? 'android'
+          : /Windows/i.test(ua)
+            ? 'windows'
+            : /Macintosh|Mac OS X/i.test(ua) && !/iPhone|iPad/i.test(ua)
+              ? 'mac'
+              : /Linux/i.test(ua) && !/CrOS/i.test(ua)
+                ? 'linux'
+                : null
+        var mine = os && document.querySelector('.dl[data-os="' + os + '"]')
+        if (mine) {
+          mine.classList.add('recommended')
+          mine.querySelector('.tag').hidden = false
+          mine.parentNode.insertBefore(mine, mine.parentNode.firstChild)
+        }
+
+        fetch('https://api.github.com/repos/BongSal/lifeflow-releases/releases/latest', {
+          headers: { Accept: 'application/vnd.github+json' },
+        })
+          .then(function (r) {
+            return r.ok ? r.json() : Promise.reject(r.status)
+          })
+          .then(function (release) {
+            var assets = release.assets || []
+            document.querySelectorAll('a.file[data-match]').forEach(function (link) {
+              var re = new RegExp(link.getAttribute('data-match'))
+              var asset = assets.find(function (a) {
+                return re.test(a.name)
+              })
+              if (asset) link.href = asset.browser_download_url
+            })
+            var name = (release.name || '').replace(/^(Jivit|Lifeflow)\s+/, '')
+            if (name) {
+              var date = new Date(release.published_at).toLocaleDateString(undefined, {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              })
+              document.getElementById('hero-version').textContent =
+                'Version ' + name + ' · released ' + date
+              document.getElementById('dl-lead').textContent =
+                'Version ' + name + ', free for Android, Windows, macOS and Linux.'
+            }
+            if (mine) {
+              var first = mine.querySelector('a.file')
+              var hero = document.getElementById('hero-download')
+              if (first && first.href.indexOf('/releases/download/') !== -1) {
+                hero.href = first.href
+                hero.textContent =
+                  'Download for ' + mine.querySelector('h3').firstChild.textContent.trim()
+              }
+            }
+          })
+          .catch(function () {})
+      })()
+    </script>
+  </body>
+</html>
