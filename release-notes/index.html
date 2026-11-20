@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lifeflow release notes</title>
+    <meta name="description" content="What's new in each version of Lifeflow." />
+    <link rel="icon" href="../logo.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="#1A1324" />
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #f7f6fb;
+        --fg: #1f1830;
+        --muted: #5f566f;
+        --border: #e6e1ef;
+        --card: #ffffff;
+        --accent: #b8336a;
+        --hero: #1a1324;
+        --hero-fg: #f1ecf8;
+        --hero-muted: #b9aecb;
+        --pink: #f06c9b;
+        --lilac: #b89cf0;
+        --new: #b8336a;
+        --improved: #5a3fa6;
+        --fixed: #2f7d4c;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #1a1324;
+          --fg: #f1ecf8;
+          --muted: #b9aecb;
+          --border: #34284a;
+          --card: #231a30;
+          --accent: #f06c9b;
+          --hero: #120d1a;
+          --new: #f06c9b;
+          --improved: #b89cf0;
+          --fixed: #6cc48a;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--fg);
+        font:
+          16px/1.65 system-ui,
+          -apple-system,
+          'Segoe UI',
+          Roboto,
+          sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      .wrap {
+        max-width: 44rem;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+      header {
+        background:
+          radial-gradient(40rem 20rem at 90% -20%, #f06c9b33, transparent 60%),
+          radial-gradient(30rem 20rem at -10% 120%, #b89cf033, transparent 60%), var(--hero);
+        color: var(--hero-fg);
+      }
+      header nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.25rem 0;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-weight: 700;
+        font-size: 1.15rem;
+        color: inherit;
+        text-decoration: none;
+      }
+      .brand img {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 0.6rem;
+      }
+      header nav a.back {
+        color: var(--hero-muted);
+        text-decoration: none;
+        font-size: 0.95rem;
+      }
+      header nav a.back:hover {
+        color: var(--hero-fg);
+      }
+      .title {
+        padding: 2rem 0 3rem;
+      }
+      h1 {
+        font-size: clamp(2rem, 6vw, 2.75rem);
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        margin: 0 0 0.5rem;
+      }
+      h1 .grad {
+        background: linear-gradient(120deg, var(--pink), var(--lilac));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .lead {
+        color: var(--hero-muted);
+        margin: 0;
+      }
+      main.wrap {
+        padding-top: 2.5rem;
+        padding-bottom: 4rem;
+      }
+      a {
+        color: var(--accent);
+      }
+
+      /* One release */
+      .release {
+        scroll-margin-top: 1.5rem;
+      }
+      .release + .release {
+        margin-top: 3rem;
+        padding-top: 2.5rem;
+        border-top: 1px solid var(--border);
+      }
+      .release-head {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 0.25rem 0.75rem;
+        margin-bottom: 1.25rem;
+      }
+      .release h2 {
+        margin: 0;
+        font-size: 1.5rem;
+        letter-spacing: -0.01em;
+      }
+      .release h2 a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .release h2 a:hover {
+        text-decoration: underline;
+      }
+      .release .meta {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+      .chip {
+        align-self: center;
+        font-size: 0.75rem;
+        font-weight: 600;
+        border-radius: 999px;
+        padding: 0.1rem 0.6rem;
+        color: var(--accent);
+        border: 1px solid currentColor;
+      }
+      .group + .group {
+        margin-top: 1.5rem;
+      }
+      h3 {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin: 0 0 0.75rem;
+        padding: 0.2rem 0.8rem;
+        border-radius: 999px;
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        color: var(--tone);
+        background: color-mix(in oklab, var(--tone) 14%, transparent);
+      }
+      h3::before {
+        content: '';
+        width: 0.45rem;
+        height: 0.45rem;
+        border-radius: 999px;
+        background: currentColor;
+      }
+      .group {
+        --tone: var(--muted);
+      }
+      .group.new {
+        --tone: var(--new);
+      }
+      .group.improved {
+        --tone: var(--improved);
+      }
+      .group.fixed {
+        --tone: var(--fixed);
+      }
+      .group ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 0.6rem;
+      }
+      .group li {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-left: 3px solid var(--tone);
+        border-radius: 1rem;
+        padding: 0.85rem 1.15rem;
+      }
+      .group p {
+        margin: 0;
+        white-space: pre-line;
+      }
+      .status {
+        color: var(--muted);
+      }
+      .preview {
+        background: color-mix(in oklab, var(--accent) 6%, var(--bg));
+        border: 1px dashed var(--accent);
+        border-radius: 1.25rem;
+        padding: 1.5rem;
+        margin-bottom: 3rem;
+      }
+      .preview + .release {
+        margin-top: 0;
+        padding-top: 0;
+        border-top: 0;
+      }
+      footer {
+        color: var(--muted);
+        border-top: 1px solid var(--border);
+        margin-top: 3rem;
+        padding-top: 1rem;
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="wrap">
+        <nav>
+          <a class="brand" href="../"><img src="../logo.svg" alt="" />Lifeflow</a>
+          <a class="back" href="../#download">Download</a>
+        </nav>
+        <div class="title">
+          <h1>What's new in <span class="grad">Lifeflow</span></h1>
+          <p class="lead">The changes in each version, newest first.</p>
+        </div>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <div id="releases" aria-live="polite">
+        <p class="status" id="status">Loading release notes…</p>
+      </div>
+
+      <footer>
+        Lifeflow · <a href="../">Home</a> ·
+        <a href="https://github.com/BongSal/lifeflow-releases/releases">Releases on GitHub</a> ·
+        <a href="../privacy/">Privacy Policy</a> · <a href="../terms-of-use/">Terms of Use</a>
+      </footer>
+    </main>
+
+    <script>
+      ;(function () {
+        var REPO = 'BongSal/lifeflow-releases'
+        var root = document.getElementById('releases')
+        var status = document.getElementById('status')
+
+        // The notes' layout: sections headed New, Improved and Fixed, each a list of "- "
+        // points; anything else shows as paragraphs. Parsed the same way as parseReleaseNotes
+        // in the app (src/lib/releaseNotes.ts); keep the two alike.
+        var HEADINGS = { new: 'New', improved: 'Improved', fixed: 'Fixed' }
+        function parse(notes) {
+          var blocks = []
+          var open = null
+          notes.split(/\r?\n/).forEach(function (raw) {
+            var line = raw.trim()
+            if (!line) {
+              if (open && open.type === 'text') open = null
+              return
+            }
+            var key = line.replace(/:$/, '').toLowerCase()
+            if (Object.prototype.hasOwnProperty.call(HEADINGS, key)) {
+              open = { type: 'list', kind: key, points: [] }
+              blocks.push(open)
+              return
+            }
+            var point = /^[-*•]\s+(.*)$/.exec(line)
+            if (point) {
+              if (!open || open.type !== 'list') {
+                open = { type: 'list', points: [] }
+                blocks.push(open)
+              }
+              open.points.push(point[1])
+              return
+            }
+            if (open && open.type === 'text') open.text += '\n' + line
+            else {
+              open = { type: 'text', text: line }
+              blocks.push(open)
+            }
+          })
+          return blocks.filter(function (b) {
+            return b.type === 'text' || b.points.length > 0
+          })
+        }
+
+        function el(tag, className, text) {
+          var node = document.createElement(tag)
+          if (className) node.className = className
+          if (text != null) node.textContent = text
+          return node
+        }
+
+        function longDate(value) {
+          var date = new Date(value)
+          if (isNaN(date)) return ''
+          return date.toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' })
+        }
+
+        // One release: { build, version, date, notes }, with an optional chip ("Latest").
+        function render(release, chip) {
+          var article = el('article', 'release')
+          article.id = 'build-' + release.build
+          var head = el('div', 'release-head')
+          var h2 = el('h2')
+          var link = el('a', null, 'Lifeflow ' + release.version)
+          link.href = '#' + article.id
+          h2.appendChild(link)
+          head.appendChild(h2)
+          if (chip) head.appendChild(el('span', 'chip', chip))
+          var meta = ['Build ' + release.build]
+          if (release.date) meta.push(release.date)
+          head.appendChild(el('span', 'meta', meta.join(' · ')))
+          article.appendChild(head)
+
+          var blocks = parse(release.notes)
+          if (!blocks.length) blocks = [{ type: 'text', text: 'Small improvements and fixes.' }]
+          blocks.forEach(function (block) {
+            var group = el('div', 'group' + (block.kind ? ' ' + block.kind : ''))
+            if (block.type === 'text') group.appendChild(el('p', null, block.text))
+            else {
+              if (block.kind) group.appendChild(el('h3', null, HEADINGS[block.kind]))
+              var ul = el('ul')
+              block.points.forEach(function (point) {
+                ul.appendChild(el('li', null, point))
+              })
+              group.appendChild(ul)
+            }
+            article.appendChild(group)
+          })
+          return article
+        }
+
+        function fail() {
+          status.textContent = ''
+          status.appendChild(document.createTextNode("Couldn't load the release notes. See them on "))
+          var a = el('a', null, 'GitHub')
+          a.href = 'https://github.com/' + REPO + '/releases'
+          status.appendChild(a)
+          status.appendChild(document.createTextNode('.'))
+        }
+
+        // ?preview=<versionCode>: a note saved by /generate-release-note and not released yet,
+        // read from <versionCode>.md beside this page.
+        var previewCode = /^\d+$/.test(new URLSearchParams(location.search).get('preview') || '')
+          ? new URLSearchParams(location.search).get('preview')
+          : null
+        var preview = previewCode
+          ? fetch(previewCode + '.md', { cache: 'no-store' })
+              .then(function (r) {
+                return r.ok ? r.text() : Promise.reject(r.status)
+              })
+              .then(function (text) {
+                var front = /^---\r?\n([\s\S]*?)\r?\n---\r?\n?/.exec(text)
+                var field = function (name) {
+                  var m = front && new RegExp('^' + name + ':\\s*(.+)$', 'm').exec(front[1])
+                  return m ? m[1].trim() : ''
+                }
+                return {
+                  build: field('versionCode') || previewCode,
+                  version: field('versionName') || '',
+                  date: field('date') ? longDate(field('date') + 'T12:00:00') : '',
+                  notes: front ? text.slice(front[0].length) : text,
+                }
+              })
+              .catch(function () {
+                return null
+              })
+          : Promise.resolve(null)
+
+        var published = fetch(
+          'https://api.github.com/repos/' + REPO + '/releases?per_page=100',
+          { headers: { Accept: 'application/vnd.github+json' } },
+        )
+          .then(function (r) {
+            return r.ok ? r.json() : Promise.reject(r.status)
+          })
+          .then(function (list) {
+            return list
+              .filter(function (r) {
+                return !r.draft && !r.prerelease && /^build-\d+$/.test(r.tag_name || '')
+              })
+              .map(function (r) {
+                var build = Number(r.tag_name.slice(6))
+                return {
+                  build: build,
+                  version: (r.name || '').replace(/^(Jivit|Lifeflow)\s+/i, '').trim() || String(build),
+                  date: longDate(r.published_at),
+                  notes: (r.body || '').trim(),
+                }
+              })
+              .sort(function (a, b) {
+                return b.build - a.build
+              })
+          })
+
+        Promise.all([preview, published.catch(function () { return null })]).then(function (res) {
+          var draft = res[0]
+          var releases = res[1]
+          if (draft) {
+            var box = el('div', 'preview')
+            box.appendChild(render(draft, 'Not released yet'))
+            root.insertBefore(box, status)
+          }
+          if (!releases) return fail()
+          status.remove()
+          if (!releases.length && !draft) {
+            root.appendChild(el('p', 'status', 'No releases yet.'))
+            return
+          }
+          releases.forEach(function (release, i) {
+            root.appendChild(render(release, i === 0 ? 'Latest' : null))
+          })
+          // The page was opened at #build-<N>: scroll there now that it exists.
+          if (location.hash) {
+            var target = document.getElementById(location.hash.slice(1))
+            if (target) target.scrollIntoView()
+          }
+        })
+      })()
+    </script>
+  </body>
+</html>
