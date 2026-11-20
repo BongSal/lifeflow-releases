@@ -1,52 +1,52 @@
 {
-  "version": "1.0.0+261120001",
-  "build": 261120001,
-  "notes": "New\n- Tasks and events with \"Remind me\" turned on now alert you: a task at its date and time, an event when it starts. Tapping the alert opens the task or the event's day.\n\nImproved\n- \"What's new\" in Settings now lists the changes of an update under New, Improved and Fixed.\n- On a board, the pointer turns into a grabbing hand only while you are moving the columns.\n- On wide screens, Tasks shows a single add button at the top of the page.",
-  "pub_date": "2026-11-20T02:29:55Z",
+  "version": "1.0.0+261120002",
+  "build": 261120002,
+  "notes": "Improved\n- The app is now smaller, so it downloads and installs faster.",
+  "pub_date": "2026-11-20T03:12:37Z",
   "platforms": {
     "darwin-aarch64-app": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUdGtSYzBEZTVvZEJoZFpadjZsZmN5RW41ZGsyT1hLQ0syaTVlMTcrcVFVWjJ5ZjhTQjVtRWd3S1FYNTdyY1FpVDlTdG1VME5VN1VBN3JMblJXTVdOcDZCdndvTGJaNGdzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTQxNTkwCWZpbGU6TGlmZWZsb3cuYXBwLnRhci5negl2ZXJzaW9uOjEuMC4wCjhhM1NpcERITjMxeTdKM1pNUXpOeFlmOXhmYVhhWkNlMy9vQUhsSWx2eUZpZ1hmS1luV01VVHM0RHVkMUpaRlVuMEZScktQckZsZWlwWURKb3pQekRRPT0K",
-      "url": "https://github.com/BongSal/lifeflow-releases/releases/download/build-261120001/Lifeflow_1.0.0_aarch64.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUdGtSYzBEZTVvZEZnL0JqbEdaSkdKaUZRaSt6N2F0Z0xDRzFCSC9zNmdGd0tEd3FYZ1M4QjVMSjZuSFVqaFlsZVVlbGkwdU5WaldqL0NmQUVwTTlDNzdUVjZUYVNpNlEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTQzODE2CWZpbGU6TGlmZWZsb3cuYXBwLnRhci5negl2ZXJzaW9uOjEuMC4wCmFERUFHTnIzZW5yKytsZFJKS0Rwb0ozVVlZWGg0SHN2cml2ODVQWWp4aHllYmdNNml5YlJNTk92ZnpYYmZKVFlhMVN2MnJZZHc2LzA3dTdqZCtwMURRPT0K",
+      "url": "https://github.com/BongSal/lifeflow-releases/releases/download/build-261120002/Lifeflow_1.0.0_aarch64.app.tar.gz"
     },
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUdGtSYzBEZTVvZEJoZFpadjZsZmN5RW41ZGsyT1hLQ0syaTVlMTcrcVFVWjJ5ZjhTQjVtRWd3S1FYNTdyY1FpVDlTdG1VME5VN1VBN3JMblJXTVdOcDZCdndvTGJaNGdzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTQxNTkwCWZpbGU6TGlmZWZsb3cuYXBwLnRhci5negl2ZXJzaW9uOjEuMC4wCjhhM1NpcERITjMxeTdKM1pNUXpOeFlmOXhmYVhhWkNlMy9vQUhsSWx2eUZpZ1hmS1luV01VVHM0RHVkMUpaRlVuMEZScktQckZsZWlwWURKb3pQekRRPT0K",
-      "url": "https://github.com/BongSal/lifeflow-releases/releases/download/build-261120001/Lifeflow_1.0.0_aarch64.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUdGtSYzBEZTVvZEZnL0JqbEdaSkdKaUZRaSt6N2F0Z0xDRzFCSC9zNmdGd0tEd3FYZ1M4QjVMSjZuSFVqaFlsZVVlbGkwdU5WaldqL0NmQUVwTTlDNzdUVjZUYVNpNlEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTQzODE2CWZpbGU6TGlmZWZsb3cuYXBwLnRhci5negl2ZXJzaW9uOjEuMC4wCmFERUFHTnIzZW5yKytsZFJKS0Rwb0ozVVlZWGg0SHN2cml2ODVQWWp4aHllYmdNNml5YlJNTk92ZnpYYmZKVFlhMVN2MnJZZHc2LzA3dTdqZCtwMURRPT0K",
+      "url": "https://github.com/BongSal/lifeflow-releases/releases/download/build-261120002/Lifeflow_1.0.0_aarch64.app.tar.gz"
     },
     "darwin-x86_64-app": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUdGtSYzBEZTVvZElzUVpBQWJ6dFgwZVdZQW8wSi9hZ0ljUFE3SHBTblNZNXZielVWK3hUVVRoRGxTWEJJc0ZuUExBYXRjWnNNY2JObUZOck93V3dwWlF1N0w3K2ZqaHdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTQxNjQ4CWZpbGU6TGlmZWZsb3cuYXBwLnRhci5negl2ZXJzaW9uOjEuMC4wCkVycjRzOWdYQTZQaTZESGpBb3FzaHptOE5vNk9nbzJ0VXJzUW9nS2NQeVFNUXZYemNCUS9oOStTS2JCTW5LeTd0Ynl4eUlUZnB4elh5bVhSNWE2U0FBPT0K",
-      "url": "https://github.com/BongSal/lifeflow-releases/releases/download/build-261120001/Lifeflow_1.0.0_x64.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUdGtSYzBEZTVvZEhOSVlIeWNYSXZ6eWdsbkNkZlBvOGpON3hsQkRoTStKYzNTdGw0N3E5L0FZdUVzQjhITExCc0NZV1BzSmFTbVJnQUFTV1d3ZnNlUVJwS2c1aTRXc2dRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTQzODY4CWZpbGU6TGlmZWZsb3cuYXBwLnRhci5negl2ZXJzaW9uOjEuMC4wCmN0MHoxbDlUSnB0VkRVbllBdnV0SkpCYWdmdWhOMEsvTDRtNHV4NkVGTFVCemVPK1dDSnlvSzhlcUdKeTBJT2xRUkMvSnlGeGtFV0VOODZ0R0R0cEJBPT0K",
+      "url": "https://github.com/BongSal/lifeflow-releases/releases/download/build-261120002/Lifeflow_1.0.0_x64.app.tar.gz"
     },
     "darwin-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUdGtSYzBEZTVvZElzUVpBQWJ6dFgwZVdZQW8wSi9hZ0ljUFE3SHBTblNZNXZielVWK3hUVVRoRGxTWEJJc0ZuUExBYXRjWnNNY2JObUZOck93V3dwWlF1N0w3K2ZqaHdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTQxNjQ4CWZpbGU6TGlmZWZsb3cuYXBwLnRhci5negl2ZXJzaW9uOjEuMC4wCkVycjRzOWdYQTZQaTZESGpBb3FzaHptOE5vNk9nbzJ0VXJzUW9nS2NQeVFNUXZYemNCUS9oOStTS2JCTW5LeTd0Ynl4eUlUZnB4elh5bVhSNWE2U0FBPT0K",
-      "url": "https://github.com/BongSal/lifeflow-releases/releases/download/build-261120001/Lifeflow_1.0.0_x64.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUdGtSYzBEZTVvZEhOSVlIeWNYSXZ6eWdsbkNkZlBvOGpON3hsQkRoTStKYzNTdGw0N3E5L0FZdUVzQjhITExCc0NZV1BzSmFTbVJnQUFTV1d3ZnNlUVJwS2c1aTRXc2dRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTQzODY4CWZpbGU6TGlmZWZsb3cuYXBwLnRhci5negl2ZXJzaW9uOjEuMC4wCmN0MHoxbDlUSnB0VkRVbllBdnV0SkpCYWdmdWhOMEsvTDRtNHV4NkVGTFVCemVPK1dDSnlvSzhlcUdKeTBJT2xRUkMvSnlGeGtFV0VOODZ0R0R0cEJBPT0K",
+      "url": "https://github.com/BongSal/lifeflow-releases/releases/download/build-261120002/Lifeflow_1.0.0_x64.app.tar.gz"
     },
     "linux-x86_64-appimage": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUdGtSYzBEZTVvZExURUl4Z3lHckFLN1ZXZFFpa0RMR0FJUktWRy9jd0JIOGRKR0N4QUV6Nk1hWWtzTEV2Ky90N25wU08wL3UzaGFJdHFwN1lzdWNWd1hCaTd3eXBJc0FFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTQxNzc2CWZpbGU6TGlmZWZsb3dfMS4wLjBfYW1kNjQuQXBwSW1hZ2UJdmVyc2lvbjoxLjAuMApKNkNETkFGZEhFWHN6d0N6Y1l3WHhrcHA5SzN0NkdnR3B2K2FQam02eWFDVmNzdW83MHpXcEZzVEx3Y3hoejd5VmwxbzFuUWRLTTlOK29MOVVmdE1CZz09Cg==",
-      "url": "https://github.com/BongSal/lifeflow-releases/releases/download/build-261120001/Lifeflow_1.0.0_amd64.AppImage"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUdGtSYzBEZTVvZEdMMEZaZ3dSV2w3Y21OdVVaVVFaKzhpOXhMM1FUVFF2ZG1KM245eEh6ZTh4Z2tXd1NnR3kxUWdHU00vWFRseG9lNWlCZXNOMzVnVUNvRXpSNENSRGcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTQ0MzM5CWZpbGU6TGlmZWZsb3dfMS4wLjBfYW1kNjQuQXBwSW1hZ2UJdmVyc2lvbjoxLjAuMAo1WlB4dXZuOWZKT3dlM3hFbkRBM0Y2ZHlCMk5aaGw4SmpKL0xJbENQbDJrcWF1Z0FubDJESkRRV1oxMFhCbmpEZjZnSEU3MWM4aCtHU2E2SHJPVmJCUT09Cg==",
+      "url": "https://github.com/BongSal/lifeflow-releases/releases/download/build-261120002/Lifeflow_1.0.0_amd64.AppImage"
     },
     "linux-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUdGtSYzBEZTVvZExURUl4Z3lHckFLN1ZXZFFpa0RMR0FJUktWRy9jd0JIOGRKR0N4QUV6Nk1hWWtzTEV2Ky90N25wU08wL3UzaGFJdHFwN1lzdWNWd1hCaTd3eXBJc0FFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTQxNzc2CWZpbGU6TGlmZWZsb3dfMS4wLjBfYW1kNjQuQXBwSW1hZ2UJdmVyc2lvbjoxLjAuMApKNkNETkFGZEhFWHN6d0N6Y1l3WHhrcHA5SzN0NkdnR3B2K2FQam02eWFDVmNzdW83MHpXcEZzVEx3Y3hoejd5VmwxbzFuUWRLTTlOK29MOVVmdE1CZz09Cg==",
-      "url": "https://github.com/BongSal/lifeflow-releases/releases/download/build-261120001/Lifeflow_1.0.0_amd64.AppImage"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUdGtSYzBEZTVvZEdMMEZaZ3dSV2w3Y21OdVVaVVFaKzhpOXhMM1FUVFF2ZG1KM245eEh6ZTh4Z2tXd1NnR3kxUWdHU00vWFRseG9lNWlCZXNOMzVnVUNvRXpSNENSRGcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTQ0MzM5CWZpbGU6TGlmZWZsb3dfMS4wLjBfYW1kNjQuQXBwSW1hZ2UJdmVyc2lvbjoxLjAuMAo1WlB4dXZuOWZKT3dlM3hFbkRBM0Y2ZHlCMk5aaGw4SmpKL0xJbENQbDJrcWF1Z0FubDJESkRRV1oxMFhCbmpEZjZnSEU3MWM4aCtHU2E2SHJPVmJCUT09Cg==",
+      "url": "https://github.com/BongSal/lifeflow-releases/releases/download/build-261120002/Lifeflow_1.0.0_amd64.AppImage"
     },
     "linux-x86_64-deb": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUdGtSYzBEZTVvZENXdlNOc0VqYnA5alpJOVd5T1BTbDhqeDgzbTZ0T2hjNUhFSVkzZnI0S0E4S3Bxa1B4b1NidXA2eEhIQjdRZFVPS2xHZXEwVzJJK2JwL1lmakx5dXdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTQxNzc2CWZpbGU6TGlmZWZsb3dfMS4wLjBfYW1kNjQuZGViCXZlcnNpb246MS4wLjAKRXBoSk1aWjR2c2JQVlQxNkdQK2dZeU0rK1l3dWt6TjVGWm4rQVI4R3NKNE80blNYZGJXWnVreWFsRXJlNE1ybVRsY2ExNTcySXQ4c2RpaEc1dWhSQkE9PQo=",
-      "url": "https://github.com/BongSal/lifeflow-releases/releases/download/build-261120001/Lifeflow_1.0.0_amd64.deb"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUdGtSYzBEZTVvZEpIeWRzRGhiL290amxBYmdwVXk3d0tHbFVUNm85eFJFRyt0eVg0cE8zUnZzcksrbTBmUVpnMzcyQ25LRmpNak0yMWNad2N0UFliWFNKNjVoWVpSUVFvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTQ0MzM4CWZpbGU6TGlmZWZsb3dfMS4wLjBfYW1kNjQuZGViCXZlcnNpb246MS4wLjAKaXZiQm4zMHk2VDhUK09LTE1FNW0wZ0ZSc2FBb1luVEg1TS8zc2tqY3RtSW9IcmV5cnBJTGVXOVl3KzRNSC9LVmhReGpKTlM2UVN5MTFNOFV0cnBhRGc9PQo=",
+      "url": "https://github.com/BongSal/lifeflow-releases/releases/download/build-261120002/Lifeflow_1.0.0_amd64.deb"
     },
     "linux-x86_64-rpm": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUdGtSYzBEZTVvZEY3dGVnbUZxNGM1YkZLb1UwRy8rNWlnU2hIQmwxVXhkWk9oRGYyRlBldzZGVzA3NkpLWUxZWjVIbDZjMi9KNjhvMHc0ZHVaalZyRkZwYTRtREpWRkE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTQxNzc2CWZpbGU6TGlmZWZsb3ctMS4wLjAtMS54ODZfNjQucnBtCXZlcnNpb246MS4wLjAKL0duakptQU5BMWxGOVB1KzB5VThsTWVER1VYRmlzQnk0MVNjMkVpbXRUcGZPOFBSaTZ4Mlo4Wk1UbkI0OEtPb0t0RHB0b1A4NkZDeUtqVXZwelpYQlE9PQo=",
-      "url": "https://github.com/BongSal/lifeflow-releases/releases/download/build-261120001/Lifeflow-1.0.0-1.x86_64.rpm"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUdGtSYzBEZTVvZERLWlVpNXMwalN4THpFUzgzQWp2R2tVajI2NHNpT2VaY1N6YUluMk9FdFRDSElZcEgwQnVyMW1vaStPZVZqKzZlR2NPZi9HOHFUTFlkYmo2ZzJKMWcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTQ0MzM5CWZpbGU6TGlmZWZsb3ctMS4wLjAtMS54ODZfNjQucnBtCXZlcnNpb246MS4wLjAKTWtkK0RpYmhSUWsrMXZVNWw4SmdmVUt0dmVuOWROd3QvdW84R2ExQWtVTTRUbTRidG9LaVpHQ3Jnd2M1cDAzRFd2cVd3MkVMUGx1d3ppaSs2S0NDREE9PQo=",
+      "url": "https://github.com/BongSal/lifeflow-releases/releases/download/build-261120002/Lifeflow-1.0.0-1.x86_64.rpm"
     },
     "windows-x86_64-msi": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUdGtSYzBEZTVvZExvVitiT0orN292YkpNVVVwU2lhd282dGNNT2JJaUNWWXhyZmNLd1pqZnQwUVFuQTVyNDlOSGw3Y3BqSVgyQTAxVGtMMmNCY1N6UTd3UExhNG1PTVFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTQxNzA3CWZpbGU6TGlmZWZsb3dfMS4wLjBfeDY0X2VuLVVTLm1zaQl2ZXJzaW9uOjEuMC4wCmFhUVlJTEZobVB5SktmZXQ1REIxZzJsRWoyNzZsWEtIOS9HSTVZc0I2S3UvQ2JLWVhKNjlyRXpqeVJtTDM4R24yK2lNMlpnbzBmenhTRTVLNjduSUNRPT0K",
-      "url": "https://github.com/BongSal/lifeflow-releases/releases/download/build-261120001/Lifeflow_1.0.0_x64_en-US.msi"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUdGtSYzBEZTVvZElmRTFUaXhqOGdDTkFydEwyazlHYkdrQzNQQUhGdEgrenE5am1VOExGL1dMR0FvVXk0dUdVWmtDV1lDanFZYzRlZlJremt5MlRmM3c2UkM3SHBBK3cwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTQzOTg0CWZpbGU6TGlmZWZsb3dfMS4wLjBfeDY0X2VuLVVTLm1zaQl2ZXJzaW9uOjEuMC4wCjZJLzVVbnA2OHdlWnZmMFFNbHBrYXZRVm14RmRlWDg4UVhJdWpHbUEwUU5VQW5PYlowQ0U2MExMWWg5N2xVQitXT1lyZzJTNW1peG5VdlR2WStSc0JRPT0K",
+      "url": "https://github.com/BongSal/lifeflow-releases/releases/download/build-261120002/Lifeflow_1.0.0_x64_en-US.msi"
     },
     "windows-x86_64-nsis": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUdGtSYzBEZTVvZE52N2g4LzVsaTFVanQ0ZS9PaUNXZXFHZEp6SDgxSVpyUWNqNzRzdjVPWDFQK2Yvem1ZU3A0NU5xbEt0L1NHVy9pdGp1NnhGMmZTVGtsWVNXYk12MmdrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTQxNzA3CWZpbGU6TGlmZWZsb3dfMS4wLjBfeDY0LXNldHVwLmV4ZQl2ZXJzaW9uOjEuMC4wCmQ3WXBZMUl6WlQyL2ZtQTROcFQ1WWZsbVV3b1ZmeTNhQ0YxeHlwSTV5bmUvVGx0WnNMOHhEMGpGQkoxamR4V2ptUnRMRlNiUDFhckhqS0lzdUlZSEFRPT0K",
-      "url": "https://github.com/BongSal/lifeflow-releases/releases/download/build-261120001/Lifeflow_1.0.0_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUdGtSYzBEZTVvZE5mOWFiUlI3dmVEc2Z1Z0FPRnIzc29xS2hmUzkzbTBJRFFxNnlkcnNqTkdzQUFabGp2RVAzeXZhS2FucnRETjlhakMyeGZLaXZ6MUw1NVJVQTZRbndzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTQzOTg0CWZpbGU6TGlmZWZsb3dfMS4wLjBfeDY0LXNldHVwLmV4ZQl2ZXJzaW9uOjEuMC4wClBEUDVrbnlyK0RwdVUwbXc4cis3ZEljc2dySndGK1hXc1Y2ZGRYaE85VnEveFFJSnhmRUp4MjhLcW1tZ2lXY2ErVzl1a1ZuSkQxczlFL0tuampNTUJBPT0K",
+      "url": "https://github.com/BongSal/lifeflow-releases/releases/download/build-261120002/Lifeflow_1.0.0_x64-setup.exe"
     },
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUdGtSYzBEZTVvZE52N2g4LzVsaTFVanQ0ZS9PaUNXZXFHZEp6SDgxSVpyUWNqNzRzdjVPWDFQK2Yvem1ZU3A0NU5xbEt0L1NHVy9pdGp1NnhGMmZTVGtsWVNXYk12MmdrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTQxNzA3CWZpbGU6TGlmZWZsb3dfMS4wLjBfeDY0LXNldHVwLmV4ZQl2ZXJzaW9uOjEuMC4wCmQ3WXBZMUl6WlQyL2ZtQTROcFQ1WWZsbVV3b1ZmeTNhQ0YxeHlwSTV5bmUvVGx0WnNMOHhEMGpGQkoxamR4V2ptUnRMRlNiUDFhckhqS0lzdUlZSEFRPT0K",
-      "url": "https://github.com/BongSal/lifeflow-releases/releases/download/build-261120001/Lifeflow_1.0.0_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUdGtSYzBEZTVvZE5mOWFiUlI3dmVEc2Z1Z0FPRnIzc29xS2hmUzkzbTBJRFFxNnlkcnNqTkdzQUFabGp2RVAzeXZhS2FucnRETjlhakMyeGZLaXZ6MUw1NVJVQTZRbndzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTQzOTg0CWZpbGU6TGlmZWZsb3dfMS4wLjBfeDY0LXNldHVwLmV4ZQl2ZXJzaW9uOjEuMC4wClBEUDVrbnlyK0RwdVUwbXc4cis3ZEljc2dySndGK1hXc1Y2ZGRYaE85VnEveFFJSnhmRUp4MjhLcW1tZ2lXY2ErVzl1a1ZuSkQxczlFL0tuampNTUJBPT0K",
+      "url": "https://github.com/BongSal/lifeflow-releases/releases/download/build-261120002/Lifeflow_1.0.0_x64-setup.exe"
     }
   }
 }
