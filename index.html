@@ -634,7 +634,7 @@
             <li>
               <div>
                 <strong>Updates itself</strong>
-                <span>New versions are installed from inside the app on Android and desktop.</span>
+                <span>Google Play keeps the Android app up to date, and the desktop apps install new versions from inside the app.</span>
               </div>
             </li>
           </ul>
@@ -712,10 +712,10 @@
             <article class="card dl" data-os="android">
               <h3>Android <span class="tag" hidden>For this device</span></h3>
               <p class="muted" style="margin: 0; color: var(--muted)">
-                Android 7 or later. Allow “Install unknown apps” for your browser when asked.
+                Android 7 or later. Installed and kept up to date by Google Play.
               </p>
               <div class="files">
-                <a class="file" data-match="\.apk$" href="https://github.com/BongSal/lifeflow-releases/releases/latest">APK <small>Phone and tablet</small></a>
+                <a class="file" id="play-store" href="https://play.google.com/store/apps/details?id=com.kosalkoeung.lifeflow" rel="noopener">Google Play <small>Phone and tablet</small></a>
               </div>
             </article>
             <article class="card dl" data-os="windows">
@@ -786,6 +786,11 @@
           mine.querySelector('.tag').hidden = false
           mine.parentNode.insertBefore(mine, mine.parentNode.firstChild)
         }
+        if (os === 'android') {
+          var heroLink = document.getElementById('hero-download')
+          heroLink.href = document.getElementById('play-store').href
+          heroLink.textContent = 'Get it on Google Play'
+        }
 
         fetch('https://api.github.com/repos/BongSal/lifeflow-releases/releases/latest', {
           headers: { Accept: 'application/vnd.github+json' },
@@ -814,7 +819,7 @@
               document.getElementById('dl-lead').textContent =
                 'Version ' + name + ', free for Android, Windows, macOS and Linux.'
             }
-            if (mine) {
+            if (mine && os !== 'android') {
               var first = mine.querySelector('a.file')
               var hero = document.getElementById('hero-download')
               if (first && first.href.indexOf('/releases/download/') !== -1) {
